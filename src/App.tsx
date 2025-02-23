@@ -1,49 +1,61 @@
-//import React, { useState } from 'react';
 import { useState } from "react";
-import { Facebook, Instagram, Waves, Palette, Star, Menu, X } from 'lucide-react';
-
+import { Facebook, Instagram, Waves, Palette, Flower2, X } from 'lucide-react';
 import Chloe_potrait from "./PXL_20231002_003018329.MP.jpg";
 
 function App() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
+  const [selectedClass, setSelectedClass] = useState<string | null>(null);
+
+  const classInfo = {
+    essence: {
+      title: "Essence",
+      description: `This classic form of painting is revamped and expanded to include
+      modern and trending styles, and a variety of fun subjects. 
+      Ranging in techniques from abstract to textured to realist - this
+      class is suitable for everyone, from beginners to experts. You can
+      choose to paint anything you see in front of you as we explore all
+      the different ways we can translate reality onto a canvas. 
+      It's the most diverse and unique class there is, with lots of room for
+      creativity and self-expression.`
+    },
+    immersion: {
+      title: "Immersion",
+      description: `This ocean and beach painting class is our most laid back
+      and easy going class there is! We will have you looking at
+      the sea at every different angle, and appreciating the
+      gentle beauty it bestows on us. 
+      This class has emphasis on capturing the vibrancy and 
+      beauty of a simple scene, with a practice of capturing
+      movement and light through different brush strokes. This
+      class is most suitable for beginners as well as our surfers
+      and ocean lovers.`
+    },
+    nurturer: {
+      title: "The Nurturer",
+      description: `Paint some flowers to freshen your space. A 2 hour class
+      where you look at a variety of styles and techniques to paint
+      a beautiful floral arrangement. 
+      Proteas are the key subject for this class, with focus on
+      capturing texture and form. We'll learn to paint in an abstract
+      expressionist style, with broad brush strokes of movement and
+      colour. Perfect for your living room or quiet space.`
+    }
+  };
 
   const scrollToContact = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-    setIsMenuOpen(false);
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-800 to-blue-900">
-      {/* Navigation */}
+      {/* About Button */}
       <div className="fixed top-0 left-0 z-50 p-4">
         <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="text-white hover:text-blue-300 transition-colors"
+          onClick={() => setIsAboutModalOpen(true)}
+          className="text-white hover:text-blue-300 transition-colors bg-blue-950 px-4 py-2 rounded-lg"
         >
-          <Menu size={32} />
+          About Me
         </button>
-        
-        {/* Dropdown Menu */}
-        {isMenuOpen && (
-          <div className="absolute top-16 left-0 bg-blue-950 rounded-lg shadow-xl p-4 min-w-[200px] border border-blue-400/20">
-            <button
-              onClick={() => {
-                setIsAboutModalOpen(true);
-                setIsMenuOpen(false);
-              }}
-              className="w-full text-left text-white hover:text-blue-300 py-2 px-4 rounded transition-colors"
-            >
-              About Me
-            </button>
-            <button
-              onClick={scrollToContact}
-              className="w-full text-left text-white hover:text-blue-300 py-2 px-4 rounded transition-colors"
-            >
-              Socials
-            </button>
-          </div>
-        )}
       </div>
 
       {/* About Modal */}
@@ -65,13 +77,40 @@ function App() {
                 />
               </div>
               <div className="md:w-2/3">
-                <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
+                <h2 className="text-4xl font-bold text-white mb-4">About the studio</h2>
                 <p className="text-lg text-blue-100 leading-relaxed">
-                  Hi! I'm Chloe, and I blend traditional painting techniques with the serene influence 
-                  of our coastal surroundings. Join me in discovering your inner artist by the ocean.
+                The Deep Art Studios was born out of the
+                desire to see people of all ages, skill levels, and walks of life find the simple joy that is painting. To give all people a moment to restand reflect, and to focus on what matters most. A momentary breath of fresh airfrom a life of hurry and exacerbating pace.Everyone can be a painter. In these classes I will show you techniques to elevateyour work and create something YOU love. You get to choose the colours, the art style, the composition - based on yourpreferences and personal taste. You create for your spaces. We will get to look at some different examples ofart styles, and you will create whatever you most resonate with. Whether you cameto do some deep self-expression, or just to yap with your bestie - I am here tosupport you to get out of the class what you came for. One of the key things we focus on is the importance of colour in the creation ofpainting pieces, and how it contributes to the overall tone and mood of your finalpainting. We look at movement, texture, and light - think Impressionism andabstract expressionism. The costs are kept as low as possible to make this class accessible. The paintingjourney is about you finding joy and grounding in the present moment. It's ametaphor for trusting the process and accepting your authentic expression asbeautiful and sacred as it is. There is no pressure to create a specific result orreceive a certain outcome - it's about trying something new and curiously engagingwith the experience of painting. It's about authentic connection, self-expression, and grounding in the present.I can't wait to paint with you.Chloe x
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Class Info Modal */}
+      {selectedClass && (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
+          <div className="bg-blue-950 rounded-xl shadow-2xl p-8 max-w-2xl w-full relative">
+            <button
+              onClick={() => setSelectedClass(null)}
+              className="absolute top-4 right-4 text-white hover:text-blue-300 transition-colors"
+            >
+              <X size={24} />
+            </button>
+            <h2 className="text-3xl font-bold text-white mb-4">{classInfo[selectedClass as keyof typeof classInfo].title}</h2>
+            <p className="text-lg text-blue-100 leading-relaxed mb-6">
+              {classInfo[selectedClass as keyof typeof classInfo].description}
+            </p>
+            <button
+              onClick={() => {
+                setSelectedClass(null);
+                scrollToContact();
+              }}
+              className="w-full bg-blue-400 text-white py-3 rounded-lg hover:bg-blue-500 transition-colors text-lg font-semibold"
+            >
+              Book Now
+            </button>
           </div>
         </div>
       )}
@@ -105,39 +144,48 @@ function App() {
             {/* Essence Class */}
             <div className="bg-blue-950 rounded-xl shadow-lg p-8 transform hover:scale-105 transition-transform border border-blue-400/20">
               <div className="text-blue-400 mb-4">
-                <Waves size={40} />
+                <Palette size={40} />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">Essence</h3>
-              <p className="text-blue-100 mb-6">Perfect for beginners. Discover the basics of painting in a relaxed environment.</p>
+              <p className="text-blue-100 mb-6">Still life painting class.</p>
               <p className="text-3xl font-bold text-blue-400 mb-4">$5</p>
-              <button onClick={scrollToContact} className="w-full bg-blue-400 text-white py-2 rounded-lg hover:bg-blue-500 transition-colors">
-                Book Now
+              <button 
+                onClick={() => setSelectedClass('essence')} 
+                className="w-full bg-blue-400 text-white py-2 rounded-lg hover:bg-blue-500 transition-colors"
+              >
+                More Info
               </button>
             </div>
 
             {/* Immersion Class */}
             <div className="bg-blue-950 rounded-xl shadow-lg p-8 transform hover:scale-105 transition-transform border border-blue-400/20">
               <div className="text-blue-400 mb-4">
-                <Palette size={40} />
+                <Waves size={40} />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">Immersion</h3>
-              <p className="text-blue-100 mb-6">Intermediate level class with personalized guidance and advanced techniques.</p>
+              <p className="text-blue-100 mb-6">Ocean painting class</p>
               <p className="text-3xl font-bold text-blue-400 mb-4">$25</p>
-              <button onClick={scrollToContact} className="w-full bg-blue-400 text-white py-2 rounded-lg hover:bg-blue-500 transition-colors">
-                Book Now
+              <button 
+                onClick={() => setSelectedClass('immersion')} 
+                className="w-full bg-blue-400 text-white py-2 rounded-lg hover:bg-blue-500 transition-colors"
+              >
+                More Info
               </button>
             </div>
 
-            {/* Artists Retreat */}
+            {/* The Nurturer */}
             <div className="bg-blue-950 rounded-xl shadow-lg p-8 transform hover:scale-105 transition-transform border border-blue-400/20">
               <div className="text-blue-400 mb-4">
-                <Star size={40} />
+                <Flower2 size={40} />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Artists Retreat</h3>
-              <p className="text-blue-100 mb-6">Food, Wine & Paint. Can't get much better than that.</p>
+              <h3 className="text-2xl font-bold text-white mb-4">The Nurturer</h3>
+              <p className="text-blue-100 mb-6">Floral painting class</p>
               <p className="text-3xl font-bold text-blue-400 mb-4">$50</p>
-              <button onClick={scrollToContact} className="w-full bg-blue-400 text-white py-2 rounded-lg hover:bg-blue-500 transition-colors">
-                Book Now
+              <button 
+                onClick={() => setSelectedClass('nurturer')} 
+                className="w-full bg-blue-400 text-white py-2 rounded-lg hover:bg-blue-500 transition-colors"
+              >
+                More Info
               </button>
             </div>
           </div>
