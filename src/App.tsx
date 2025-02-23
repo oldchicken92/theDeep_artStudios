@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Facebook, Instagram, Waves, Palette, Flower2, X } from 'lucide-react';
-import Chloe_potrait from "./PXL_20231002_003018329.MP.jpg";
+import About from './About';
 
 function App() {
-  const [isAboutModalOpen, setIsAboutModalOpen] = useState(false);
   const [selectedClass, setSelectedClass] = useState<string | null>(null);
+  const [showAbout, setShowAbout] = useState(false);
 
   const classInfo = {
     essence: {
@@ -46,47 +46,31 @@ function App() {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  if (showAbout) {
+    return (
+      <>
+        <button
+          onClick={() => setShowAbout(false)}
+          className="fixed top-4 left-4 z-50 text-white hover:text-blue-300 transition-colors bg-blue-950 px-4 py-2 rounded-lg"
+        >
+          Back to Home
+        </button>
+        <About />
+      </>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-800 to-blue-900">
       {/* About Button */}
       <div className="fixed top-0 left-0 z-50 p-4">
         <button
-          onClick={() => setIsAboutModalOpen(true)}
+          onClick={() => setShowAbout(true)}
           className="text-white hover:text-blue-300 transition-colors bg-blue-950 px-4 py-2 rounded-lg"
         >
-          About Me
+          About The Studio
         </button>
       </div>
-
-      {/* About Modal */}
-      {isAboutModalOpen && (
-        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
-          <div className="bg-blue-950 rounded-xl shadow-2xl p-8 max-w-2xl w-full relative">
-            <button
-              onClick={() => setIsAboutModalOpen(false)}
-              className="absolute top-4 right-4 text-white hover:text-blue-300 transition-colors"
-            >
-              <X size={24} />
-            </button>
-            <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className="md:w-1/3">
-                <img
-                  src={Chloe_potrait}
-                  alt="Artist portrait"
-                  className="rounded-lg shadow-xl"
-                />
-              </div>
-              <div className="md:w-2/3">
-                <h2 className="text-4xl font-bold text-white mb-4">About the studio</h2>
-                <p className="text-lg text-blue-100 leading-relaxed">
-                The Deep Art Studios was born out of the
-                desire to see people of all ages, skill levels, and walks of life find the simple joy that is painting. To give all people a moment to restand reflect, and to focus on what matters most. A momentary breath of fresh airfrom a life of hurry and exacerbating pace.Everyone can be a painter. In these classes I will show you techniques to elevateyour work and create something YOU love. You get to choose the colours, the art style, the composition - based on yourpreferences and personal taste. You create for your spaces. We will get to look at some different examples ofart styles, and you will create whatever you most resonate with. Whether you cameto do some deep self-expression, or just to yap with your bestie - I am here tosupport you to get out of the class what you came for. One of the key things we focus on is the importance of colour in the creation ofpainting pieces, and how it contributes to the overall tone and mood of your finalpainting. We look at movement, texture, and light - think Impressionism andabstract expressionism. The costs are kept as low as possible to make this class accessible. The paintingjourney is about you finding joy and grounding in the present moment. It's ametaphor for trusting the process and accepting your authentic expression asbeautiful and sacred as it is. There is no pressure to create a specific result orreceive a certain outcome - it's about trying something new and curiously engagingwith the experience of painting. It's about authentic connection, self-expression, and grounding in the present.I can't wait to paint with you.Chloe x
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Class Info Modal */}
       {selectedClass && (
