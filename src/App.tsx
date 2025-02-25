@@ -46,12 +46,16 @@ function App() {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const scrollToBooking = () => {
+    document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   if (showAbout) {
     return (
       <>
         <button
           onClick={() => setShowAbout(false)}
-          className="fixed top-4 left-4 z-50 text-white hover:text-[#c89278] transition-colors bg-[#879983] px-4 py-2 rounded-lg shadow-lg"
+          className="fixed top-4 left-4 z-50 text-white hover:text-[#c89278] transition-colors bg-[#879983] px-4 py-2 rounded-lg shadow-lg font-['DM_Sans']"
         >
           Back to Home
         </button>
@@ -61,7 +65,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#879983] to-[#c89278]">
+    <div className="min-h-screen bg-gradient-to-b from-[#879983] to-[#c89278] font-['DM_Sans']">
       {/* About Button */}
       <div className="fixed top-0 left-0 z-50 p-4">
         <button
@@ -99,21 +103,21 @@ function App() {
         </div>
       )}
 
-      {/* Hero Section */}
+      {/* Hero Section //backdrop-blur-sm*/}
       <header className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="src/paintingClass.jpg"
+            src="src/b6234e13-98ae-456d-8e1c-93e54a234423.jpg"
             alt="Deep ocean waves"
             className="w-full h-full object-cover"
           />
         </div>
 
-        <div className="relative text-center px-8 py-12 rounded-xl bg-black/10 backdrop-blur-sm" >
-          <h1 className="text-6xl font-bold text-white mb-6 drop-shadow-lg ">theDeep_ArtStudios</h1>
-          <p className="text-xl text-white mb-8 font-['DM_Sans']">Discover your artistic journey by the ocean</p>
+        <div className="relative text-center px-8 py-12 rounded-xl bg-black/20">
+          <h1 className="text-6xl font-bold text-white mb-6 drop-shadow-lg">theDeep_ArtStudios</h1>
+          <p className="text-xl text-white mb-8">Discover your artistic journey by the ocean</p>
           <button
-            onClick={scrollToContact}
+            onClick={scrollToBooking}
             className="bg-[#879983] text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-[#c89278] transition-colors shadow-lg"
           >
             Book Now
@@ -124,7 +128,7 @@ function App() {
       {/* Classes Section */}
       <section className="py-20 bg-white/90">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-[#879983] text-center mb-16 ">Our Classes</h2>
+          <h2 className="text-4xl font-bold text-[#879983] text-center mb-16">Our Classes</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {/* Essence Class */}
             <div className="bg-white rounded-xl shadow-lg p-8 transform hover:scale-105 transition-transform border border-[#c89278]/20">
@@ -132,7 +136,7 @@ function App() {
                 <Palette size={40} />
               </div>
               <h3 className="text-2xl font-bold text-[#879983] mb-4">Essence</h3>
-              <p className="text-gray-600 mb-6 ">Still life painting class.</p>
+              <p className="text-gray-600 mb-6">Still life painting class.</p>
               <p className="text-3xl font-bold text-[#c89278] mb-4">$5pp</p>
               <button 
                 onClick={() => setSelectedClass('essence')} 
@@ -180,7 +184,7 @@ function App() {
       {/* Gallery Section */}
       <section className="py-20 bg-[#AF957C]">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-[#ffffff] text-center mb-16 ">Gallery</h2>
+          <h2 className="text-4xl font-bold text-[#ffffff] text-center mb-16">Gallery</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             <img src="src/dfa6d526-76ac-4223-85d7-61f542a8cfa0.jpg" alt="Beach painting" className="rounded-lg hover:opacity-90 transition-opacity shadow-lg" />
             <img src="src/5f007a71-eb4c-486e-b02c-9370b0f2d283.jpg" alt="Ocean art" className="rounded-lg hover:opacity-90 transition-opacity shadow-lg" />
@@ -193,11 +197,10 @@ function App() {
       </section>
 
       {/* Bookings Section */}
-      <section className="py-20 bg-[#ffffff]">
+      <section id='booking' className="py-20 bg-[#ffffff]">
         <div className="container mx-auto px-4">
           <h2 className="text-6xl font-['Dancing_Script'] text-[#879983] text-center mb-8">Make a Booking</h2>
           <div className="flex gap-8 items-start">
-            
             <div className="flex-1 space-y-4">
               <div>
                 <h3 className="text-2xl font-bold text-[#879983] mb-2">Gather your friends</h3>
@@ -229,7 +232,7 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-[#AF957C] ">
+      <section id="contact" className="py-20 bg-[#AF957C]">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold text-[#fafafa] mb-8">Contact Us</h2>
           <p className="text-xl text-[#fafafa] mb-12">Message me on social media to make a booking & get in touch!</p>
