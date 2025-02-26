@@ -114,7 +114,10 @@ function App() {
         </div>
 
         <div className="relative text-left px-4 md:px-8 py-8 md:py-12 rounded-xl bg-black/20 w-full md:w-auto">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 md:mb-6 drop-shadow-lg">TheDeep_ArtStudios</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-4 md:mb-6 drop-shadow-lg">
+            <span className="block sm:inline">TheDeep</span>
+            <span className="block sm:inline">_ArtStudios</span>
+          </h1>
           <p className="text-lg md:text-xl text-white mb-6 md:mb-8 font-bold">"Express yourself—your way, your colors, your story."</p>
           <button
             onClick={scrollToBooking}
