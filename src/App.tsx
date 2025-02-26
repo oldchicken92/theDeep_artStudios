@@ -107,7 +107,7 @@ function App() {
       <header className="relative h-screen flex items-end justify-end overflow-hidden p-6">
         <div className="absolute inset-0">
           <img
-            src="src/edit.jpg"
+            src="./edit.jpg"
             alt="Deep ocean waves"
             className="w-full h-full object-cover"
           />
@@ -186,12 +186,12 @@ function App() {
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-[#ffffff] text-center mb-16">Gallery</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            <img src="src/dfa6d526-76ac-4223-85d7-61f542a8cfa0.jpg" alt="Beach painting" className="rounded-lg hover:opacity-90 transition-opacity shadow-lg" />
-            <img src="src/5f007a71-eb4c-486e-b02c-9370b0f2d283.jpg" alt="Ocean art" className="rounded-lg hover:opacity-90 transition-opacity shadow-lg" />
-            <img src="src/3f01fa77-8760-4fc3-b73d-8f6c5d5b2d04.jpg" alt="Watercolor" className="rounded-lg hover:opacity-90 transition-opacity shadow-lg" />
-            <img src="src/2d61721d-72fa-474e-8820-9d87609527ed.jpg" alt="Coastal art" className="rounded-lg hover:opacity-90 transition-opacity shadow-lg" />
-            <img src="src/b8e17601-d32f-44ed-ac3d-812147bef109.jpg" alt="Seascape" className="rounded-lg hover:opacity-90 transition-opacity shadow-lg" />
-            <img src="src/4c070121-e612-4394-8933-51ae1a062ee4.jpg" alt="Wave painting" className="rounded-lg hover:opacity-90 transition-opacity shadow-lg" />
+            <img src="./dfa6d526-76ac-4223-85d7-61f542a8cfa0.jpg" alt="Beach painting" className="rounded-lg hover:opacity-90 transition-opacity shadow-lg" />
+            <img src="./5f007a71-eb4c-486e-b02c-9370b0f2d283.jpg" alt="Ocean art" className="rounded-lg hover:opacity-90 transition-opacity shadow-lg" />
+            <img src="./3f01fa77-8760-4fc3-b73d-8f6c5d5b2d04.jpg" alt="Watercolor" className="rounded-lg hover:opacity-90 transition-opacity shadow-lg" />
+            <img src="./2d61721d-72fa-474e-8820-9d87609527ed.jpg" alt="Coastal art" className="rounded-lg hover:opacity-90 transition-opacity shadow-lg" />
+            <img src="./b8e17601-d32f-44ed-ac3d-812147bef109.jpg" alt="Seascape" className="rounded-lg hover:opacity-90 transition-opacity shadow-lg" />
+            <img src="./4c070121-e612-4394-8933-51ae1a062ee4.jpg" alt="Wave painting" className="rounded-lg hover:opacity-90 transition-opacity shadow-lg" />
           </div>
         </div>
       </section>
