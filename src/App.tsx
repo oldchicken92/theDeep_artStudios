@@ -104,18 +104,18 @@ function App() {
       )}
 
       {/* Hero Section //backdrop-blur-sm*/}
-      <header className="relative h-screen flex items-center justify-center overflow-hidden">
+      <header className="relative h-screen flex items-end justify-end overflow-hidden p-6">
         <div className="absolute inset-0">
           <img
-            src="src/b6234e13-98ae-456d-8e1c-93e54a234423.jpg"
+            src="src/edit.jpg"
             alt="Deep ocean waves"
             className="w-full h-full object-cover"
           />
         </div>
 
-        <div className="relative text-center px-8 py-12 rounded-xl bg-black/20">
-          <h1 className="text-6xl font-bold text-white mb-6 drop-shadow-lg">theDeep_ArtStudios</h1>
-          <p className="text-xl text-white mb-8">Discover your artistic journey by the ocean</p>
+        <div className="relative text-left px-8 py-12 rounded-xl bg-black/20">
+          <h1 className="text-6xl font-bold text-white mb-6 drop-shadow-lg">TheDeep_ArtStudios</h1>
+          <p className="text-xl text-white mb-8 font-bold">"Express yourself—your way, your colors, your story."</p>
           <button
             onClick={scrollToBooking}
             className="bg-[#879983] text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-[#c89278] transition-colors shadow-lg"
@@ -137,7 +137,7 @@ function App() {
               </div>
               <h3 className="text-2xl font-bold text-[#879983] mb-4">Essence</h3>
               <p className="text-gray-600 mb-6">Still life painting class.</p>
-              <p className="text-3xl font-bold text-[#c89278] mb-4">$5pp</p>
+              <p className="text-3xl font-bold text-[#c89278] mb-4">$25pp</p>
               <button 
                 onClick={() => setSelectedClass('essence')} 
                 className="w-full bg-[#879983] text-white py-2 rounded-lg hover:bg-[#c89278] transition-colors shadow-md"
@@ -169,7 +169,7 @@ function App() {
               </div>
               <h3 className="text-2xl font-bold text-[#879983] mb-4">The Nurturer</h3>
               <p className="text-gray-600 mb-6">Floral painting class</p>
-              <p className="text-3xl font-bold text-[#c89278] mb-4">$20pp</p>
+              <p className="text-3xl font-bold text-[#c89278] mb-4">$30pp</p>
               <button 
                 onClick={() => setSelectedClass('nurturer')} 
                 className="w-full bg-[#879983] text-white py-2 rounded-lg hover:bg-[#c89278] transition-colors shadow-md"
@@ -219,7 +219,7 @@ function App() {
               
               <div>
                 <h3 className="text-2xl font-bold text-[#879983] mb-2">Choose a class</h3>
-                <p className="text-gray-600">There are a variety of classes on offer for you to try! Look through this folio with your friends and choose which one you would like to do.</p>
+                <p className="text-gray-600">There are a variety of classes on offer for you to try! Look through the classes with your friends and choose which one you would like to do.</p>
               </div>
               
               <div>
@@ -231,23 +231,43 @@ function App() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-[#AF957C]">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-[#fafafa] mb-8">Contact Us</h2>
-          <p className="text-xl text-[#fafafa] mb-12">Message me on social media to make a booking & get in touch!</p>
-          <div className="flex justify-center gap-8">
-            <a href="https://www.instagram.com/thedeep_artstudios?igsh=Mmt6NnpxMGJ4eTFp" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#ffffff] hover:text-[#c89278] transition-colors">
-              <Instagram size={24} />
-              <span>thedeep_artstudios</span>
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-[#ffffff] hover:text-[#c89278] transition-colors">
-              <Facebook size={24} />
-              <span>Facebook</span>
-            </a>
-          </div>
-        </div>
-      </section>
+     {/* Contact Section */}
+     <section
+  id="contact"
+  className="bg-cover bg-center bg-no-repeat relative"
+  style={{ backgroundImage: "url('src/b6234e13-98ae-456d-8e1c-93e54a234423.jpg')", height: "300px" }}
+>
+  <div className="w-full h-full flex justify-end">
+    <div className="bg-[#c89278] bg-opacity-100 p-10 w-5/12 text-center flex flex-col justify-center rounded-l-lg h-full">
+      <h2 className="text-4xl font-bold text-[#fafafa] mb-8">Contact Us</h2>
+      <p className="text-xl text-[#fafafa] mb-12">
+        Message me on social media to make a booking & get in touch!
+      </p>
+      <div className="flex justify-center gap-8">
+        <a
+          href="https://www.instagram.com/thedeep_artstudios?igsh=Mmt6NnpxMGJ4eTFp"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 text-[#ffffff] hover:text-black transition-colors"
+        >
+          <Instagram size={24} />
+          <span>thedeep_artstudios</span>
+        </a>
+        <a
+          href="https://facebook.com/share/12Jz1xnjo8D/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 text-[#ffffff] hover:text-black transition-colors"
+        >
+          <Facebook size={24} />
+          <span>Chloe_Tarasenko</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
     </div>
   );
 }
