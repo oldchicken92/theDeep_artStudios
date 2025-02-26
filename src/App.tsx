@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Facebook, Instagram, Waves, Palette, Flower2, X } from 'lucide-react';
 import About from './About';
 
-function App() {
+const App = () => {
   const [selectedClass, setSelectedClass] = useState<string | null>(null);
   const [showAbout, setShowAbout] = useState(false);
 
@@ -114,11 +114,11 @@ function App() {
         </div>
 
         <div className="relative text-left px-4 md:px-8 py-8 md:py-12 rounded-xl bg-black/20 w-full md:w-auto">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-4 md:mb-6 drop-shadow-lg">
-            <span className="block sm:inline">TheDeep</span>
-            <span className="block sm:inline">_ArtStudios</span>
+          <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-white mb-4 md:mb-6 drop-shadow-lg tracking-tight">
+            <span className="block md:inline whitespace-nowrap">TheDeep</span>
+            <span className="block md:inline whitespace-nowrap">_ArtStudios</span>
           </h1>
-          <p className="text-lg md:text-xl text-white mb-6 md:mb-8 font-bold">"Express yourself—your way, your colors, your story."</p>
+          <p className="text-base sm:text-lg md:text-xl text-white mb-6 md:mb-8 font-bold">"Express yourself—your way, your colors, your story."</p>
           <button
             onClick={scrollToBooking}
             className="bg-[#879983] text-white px-6 md:px-8 py-3 rounded-full text-base md:text-lg font-semibold hover:bg-[#c89278] transition-colors shadow-lg w-full md:w-auto"
@@ -272,5 +272,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
