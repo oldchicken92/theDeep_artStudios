@@ -187,7 +187,7 @@ function App() {
           <h2 className="text-3xl md:text-4xl font-bold text-[#ffffff] text-center mb-8 md:mb-16">Gallery</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             <img src="/theDeep_artStudios/dfa6d526-76ac-4223-85d7-61f542a8cfa0.jpg" alt="Beach painting" className="w-full rounded-lg hover:opacity-90 transition-opacity shadow-lg" />
-            <img src="/theDeep_artStudios/5f007a71-eb4c-486e-b02c-9370b0f2d283.jpg" alt="Ocean art" className="w-full rounded-lg hover:opacity-90 transition-opacity shadow-lg" />
+            <img src="/theDeep_artStudios/5f007a71-eb4c-486e-b02c-9370b0f2d283.jpg.jpg" alt="Ocean art" className="w-full rounded-lg hover:opacity-90 transition-opacity shadow-lg" />
             <img src="/theDeep_artStudios/3f01fa77-8760-4fc3-b73d-8f6c5d5b2d04.jpg" alt="Watercolor" className="w-full rounded-lg hover:opacity-90 transition-opacity shadow-lg" />
             <img src="/theDeep_artStudios/2d61721d-72fa-474e-8820-9d87609527ed.jpg" alt="Coastal art" className="w-full rounded-lg hover:opacity-90 transition-opacity shadow-lg" />
             <img src="/theDeep_artStudios/b8e17601-d32f-44ed-ac3d-812147bef109.jpg" alt="Seascape" className="w-full rounded-lg hover:opacity-90 transition-opacity shadow-lg" />
