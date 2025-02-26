@@ -107,7 +107,7 @@ function App() {
       <header className="relative h-screen flex items-end justify-end overflow-hidden p-4 md:p-6">
         <div className="absolute inset-0">
           <img
-            src="./edit.jpg"
+            src="/theDeep_artStudios/edit.jpg"
             alt="Deep ocean waves"
             className="w-full h-full object-cover"
           />
